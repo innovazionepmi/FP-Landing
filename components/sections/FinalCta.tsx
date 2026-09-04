@@ -26,9 +26,6 @@ export default function FinalCta() {
         </div>
 
         <div style={{ marginTop: 48, color: "var(--white)" }}>
-          <p className={shared.paragraph} style={{ color: "var(--white)", fontWeight: 700, textAlign: "right" }}>
-            Simone Poletti
-          </p>
           <p className={shared.paragraph} style={{ color: "var(--white)", fontSize: "0.9rem" }}>
             PS: Mentre tu ci stai pensando, gli altri si iscrivono e occupano
             i posti disponibili… cosa aspetti?

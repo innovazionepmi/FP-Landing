@@ -35,23 +35,21 @@ export default function Tools() {
       <div className={shared.container}>
         <span className={shared.eyebrow}>Come funziona</span>
         <h2 className={shared.heading}>Gli Strumenti che avrai a disposizione</h2>
-        <div className={styles.wrap}>
-          <ul className={shared.bulletList}>
-            {tools.map((t) => (
-              <li key={t.title}>
-                <strong>{t.title}</strong> — {t.text}
-              </li>
-            ))}
-          </ul>
-          <div className={`${styles.imageBox} ${styles.imageBoxReverse}`}>
-            <Image
-              src="/images/Strumenti.jpg"
-              alt="Gli strumenti di The Image Master"
-              fill
-              sizes="(max-width: 860px) 100vw, 50vw"
-            />
-          </div>
+        <div className={styles.banner}>
+          <Image
+            src="/images/Strumenti.jpg"
+            alt="Gli strumenti di The Image Master"
+            fill
+            sizes="100vw"
+          />
         </div>
+        <ul className={`${shared.bulletList} ${shared.narrow}`}>
+          {tools.map((t) => (
+            <li key={t.title}>
+              <strong>{t.title}</strong> — {t.text}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -26,21 +26,19 @@ export default function WhatYouLearn() {
         <h2 className={shared.heading}>
           Cosa Imparerai in questo Percorso
         </h2>
-        <div className={styles.wrap}>
-          <div className={styles.imageBox}>
-            <Image
-              src="/images/Cosa-Imparareai.jpg"
-              alt="Cosa imparerai in The Image Master"
-              fill
-              sizes="(max-width: 860px) 100vw, 50vw"
-            />
-          </div>
-          <ul className={shared.bulletList}>
-            {items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+        <div className={styles.banner}>
+          <Image
+            src="/images/Cosa-Imparareai.jpg"
+            alt="Cosa imparerai in The Image Master"
+            fill
+            sizes="100vw"
+          />
         </div>
+        <ul className={`${shared.bulletList} ${shared.narrow}`}>
+          {items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

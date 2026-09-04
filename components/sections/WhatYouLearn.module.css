@@ -1,34 +1,13 @@
-.wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-@media (max-width: 860px) {
-  .wrap {
-    grid-template-columns: 1fr;
-  }
-}
-
-.imageBox {
+.banner {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2000 / 554;
   border-radius: 16px;
   overflow: hidden;
+  margin-bottom: 40px;
+  background: #0d1b1e;
 }
 
-.imageBox img {
-  object-fit: cover;
-}
-
-.imageBoxReverse {
-  order: 2;
-}
-
-@media (max-width: 860px) {
-  .imageBoxReverse {
-    order: 0;
-  }
+.banner img {
+  object-fit: contain;
 }
