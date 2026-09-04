@@ -45,6 +45,13 @@ npm run dev
    dell'account Brevo).
 3. Su Vercel imposta `SMTP_USER` (login) e `SMTP_PASS` (la key). Host e
    porta di default (`smtp-relay.brevo.com` / `587`) vanno bene così.
+4. **Importante**: `SMTP_USER` è solo il login di autenticazione (un
+   identificativo tipo `xxxxx@smtp-brevo.com`, generato da Brevo) — non è
+   un mittente valido. Vai su Brevo → **Impostazioni → Mittenti e IP →
+   Mittenti**, aggiungi e verifica un vero indirizzo email (es. quello del
+   cliente, o un tuo indirizzo), e impostalo su Vercel come
+   `SMTP_FROM_EMAIL`. Se ometti questo passaggio Brevo rifiuta l'invio con
+   errore "Sending has been rejected... sender is not valid".
 
 ### 3. Dominio
 

@@ -11,10 +11,18 @@ export async function appendLeadRow(row: string[]) {
     );
   }
 
+  // Defensive normalization: env vars are frequently pasted with the
+  // literal \n sequences from the downloaded JSON, sometimes with stray
+  // surrounding quotes or whitespace that break PEM parsing.
+  let normalizedKey = key.trim();
+  if (normalizedKey.startsWith('"') && normalizedKey.endsWith('"')) {
+    normalizedKey = normalizedKey.slice(1, -1);
+  }
+  normalizedKey = normalizedKey.replace(/\\n/g, "\n").trim();
+
   const auth = new google.auth.JWT({
     email,
-    // Vercel env vars store the private key with literal \n sequences.
-    key: key.replace(/\\n/g, "\n"),
+    key: normalizedKey,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
