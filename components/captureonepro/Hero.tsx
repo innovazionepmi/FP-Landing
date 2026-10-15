@@ -40,6 +40,9 @@ export default function Hero() {
                 <strong>Dal 12 Novembre 2026</strong>ogni giovedì
               </div>
               <div className={s.fact}>
+                <span className={s.promo}>
+                  Promo fino al <span className={s.nowrap}>15 Ottobre</span>
+                </span>
                 <strong>297,00 € + IVA</strong>invece di 1.200,00 €
               </div>
               <div className={s.fact}>

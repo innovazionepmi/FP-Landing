@@ -142,7 +142,7 @@
 
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -166,6 +166,26 @@
   font-size: 1.05rem;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+/* targhetta nella tessera del prezzo */
+.promo {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 5px 9px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
 @media (min-width: 900px) {
   /* colonna sinistra alta quanto il form: le tessere dei dati si allungano */
   .heroLeft {
@@ -181,6 +201,18 @@
   .heroFacts .facts {
     flex: 1;
     grid-auto-rows: 1fr;
+  }
+  /* targhetta a cavallo del bordo alto: non aggiunge altezza alla tessera */
+  .fact {
+    position: relative;
+  }
+  .promo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 0.7rem;
   }
 }
 
@@ -222,6 +254,14 @@
   .fact strong {
     font-size: 0.88rem;
     white-space: nowrap;
+  }
+  .promo {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    padding: 5px 10px;
+    border-radius: 12px;
+    white-space: normal;
   }
   /* 4. pulsante verso il form */
   .hero .heroCta {
