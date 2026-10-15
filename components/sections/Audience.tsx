@@ -3,17 +3,17 @@ import shared from "./shared.module.css";
 
 const cards = [
   {
-    img: "/images/Fotografi.jpg",
+    img: "/imagemaster/images/Fotografi.jpg",
     title: "Fotografi e Studi",
     text: "The Image Master è il percorso che i Fotografi aspettavano: l'occasione per fare finalmente chiarezza nella “questione AI” e acquisire le competenze e le abilità necessarie per gestire un processo di creazione pronto per il mercato dei prossimi anni. È rivolto a Fotografi Professionisti e Appassionati che vogliano utilizzare Fotografia, AI e Ritocco in modo professionale e di alto livello. Perfetto per studi che vogliono formare i propri fotografi, assistenti e ritoccatori interni.",
   },
   {
-    img: "/images/Retoucher-2.jpg",
+    img: "/imagemaster/images/Retoucher-2.jpg",
     title: "Ritoccatori e Appassionati di Post",
     text: "Chi si occupa di fotoritocco oggi ha la necessità di dominare la Generazione AI e il Ritocco di Alto Profilo. I nostri clienti, agenzie e fotografi, ci chiedono ogni giorno immagini che mescolano Fotografia e AI, per campagne pubblicitarie nazionali e internazionali. Essere in grado di creare immagini belle e credibili, attraverso un processo sinergico Photo + AI + Retouch, è il presente e il futuro di questo settore.",
   },
   {
-    img: "/images/Creativi.jpg",
+    img: "/imagemaster/images/Creativi.jpg",
     title: "Creativi, Grafici e Agenzie",
     text: "Il percorso perfetto per formare chi crea immagini: Art Director, team creativi di agenzia, grafici pubblicitari. Un percorso progressivo, che esplora diverse tipologie di immagini, dal Fashion all'Advertising, aiutandoti a costruire il tuo workflow sinergico per creare immagini incredibili.",
   },

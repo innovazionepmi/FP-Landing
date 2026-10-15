@@ -85,7 +85,7 @@ export default function Intro() {
           sceglierete il miglior percorso per te.
         </p>
         <div style={{ marginTop: 32 }}>
-          <LeadForm formId="form-hero" />
+          <LeadForm formId="form-hero" thankYouPath="/imagemaster/grazie" origine="imagemaster" />
         </div>
       </div>
     </section>

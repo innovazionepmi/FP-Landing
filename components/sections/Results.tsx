@@ -55,7 +55,7 @@ export default function Results() {
           {gallery.map((file) => (
             <div key={file} className={styles.tile}>
               <Image
-                src={`/images/${file}`}
+                src={`/imagemaster/images/${file}`}
                 alt="Immagine creata durante il percorso The Image Master (foto + AI + post)"
                 fill
                 sizes="(max-width: 860px) 50vw, 25vw"

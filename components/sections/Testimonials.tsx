@@ -4,28 +4,28 @@ import styles from "./Testimonials.module.css";
 
 const testimonials = [
   {
-    img: "/images/Angelo-Florio.jpg",
+    img: "/imagemaster/images/Angelo-Florio.jpg",
     name: "Angelo Florio",
     role: "Fotografo Professionista",
     quote:
       "Prima di iniziare THE IMAGE MASTER, la mia conoscenza sull'uso dell'AI in fotografia si limitava a chat GPT usato in modo molto basico. Questo corso è andato ben oltre le mie aspettative: mi ha dato una chiara visione delle reali possibilità dell'AI e dei suoi limiti. Soprattutto mi ha dato un metodo di lavoro per sfruttare un processo integrato fra AI, fotografia e postproduzione.",
   },
   {
-    img: "/images/Marco-Vagnetti.jpg",
+    img: "/imagemaster/images/Marco-Vagnetti.jpg",
     name: "Marco Vagnetti",
     role: "Fotografo e Ritoccatore Professionista",
     quote:
       "Questo corso mi ha dato il confronto produttivo che cercavo e mi ha permesso di comprendere i limiti e le potenzialità di questo strumento. Il punto forte è stata la proposta concreta di seguire un processo creativo e pratico dall'inizio alla fine. Consiglio The Image Master a tutti quelli che lavorano con l'immagine.",
   },
   {
-    img: "/images/Liana-Celano.jpg",
+    img: "/imagemaster/images/Liana-Celano.jpg",
     name: "Liana Celano",
     role: "",
     quote:
       "Integrare fotografia, AI e ritocco senza un flusso di lavoro adeguato era il mio limite. Grazie a The Image Master ho costruito vere e proprie mappe mentali dell'intero processo creativo e produttivo: oggi riesco a valutare fin dall'inizio quale approccio sia più adatto al progetto e come integrare fotografia, AI e ritocco in modo efficace.",
   },
   {
-    img: "/images/Dario-Quinzani.jpg",
+    img: "/imagemaster/images/Dario-Quinzani.jpg",
     name: "Dario Quinzani",
     role: "",
     quote:

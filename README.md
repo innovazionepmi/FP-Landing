@@ -7,6 +7,32 @@ originale (`https://www.fotografiaprofessionale.it/prodotti/the-image-master-cmb
 con un modulo di contatto nativo che scrive su Google Sheet e invia una
 notifica email via Brevo.
 
+## Struttura: una cartella per ogni landing
+
+Ogni landing vive sotto `/<nome-landing>` sullo stesso dominio
+(`fotografiaprofessionale.innovazionepmi.it`):
+
+| Landing | URL | Thank-you page | Codice |
+| --- | --- | --- | --- |
+| The Image Master | `/imagemaster` | `/imagemaster/grazie` | `app/imagemaster/`, `components/sections/` |
+| Capture One Professional Workflow | `/captureonepro` | `/captureonepro/grazie` | `app/captureonepro/`, `components/captureonepro/` |
+
+Le immagini stanno in `public/<nome-landing>/images/`. La radice `/` non ha
+pagina. Per aggiungere una nuova landing:
+
+1. crea `app/<nome>/page.tsx`, `app/<nome>/grazie/page.tsx` (con
+   `<TrackLead />` per l'evento `Lead`) e un `layout.tsx` con i metadata;
+2. usa `<LeadForm formId=... thankYouPath="/<nome>/grazie" origine="<nome>" />`;
+3. aggiungi `<nome>` in `lib/origins.ts` (slug + etichetta per l'email).
+
+## Colonna "origine" sul Google Sheet
+
+Ogni lead scrive la colonna **F** con lo slug della landing di provenienza
+(`imagemaster`, `captureonepro`). I lead arrivati prima di questa modifica
+hanno `landing-backup`; lo stesso valore è usato se `origine` manca o non è
+in `lib/origins.ts`. Anche oggetto e mittente dell'email di notifica
+riportano il nome del corso.
+
 ## Stack
 
 Next.js (App Router) + React, deploy su Vercel. Le variabili sensibili
@@ -75,7 +101,7 @@ Tutte le modifiche vanno prima su `staging`, testate, poi mergiate su
   `/api/lead`, funzione serverless Vercel che scrive su Google Sheet e
   invia l'email in parallelo — è la causa del problema mobile originale
   che qui non si presenta.
-- Pagina impostata come `noindex` (vedi `app/layout.tsx`) perché è una
+- Pagina impostata come `noindex` (vedi i `layout.tsx` di ogni landing) perché è una
   landing di backup temporanea, per evitare contenuti duplicati in SEO
   rispetto all'originale.
 
@@ -84,10 +110,10 @@ Tutte le modifiche vanno prima su `staging`, testate, poi mergiate su
 - Il Meta Pixel (ID `633889586785014`, in `components/MetaPixel.tsx`) è
   caricato su ogni pagina e traccia automaticamente `PageView`.
 - Dopo un invio riuscito del form, il browser viene reindirizzato (con
-  una navigazione completa, non client-side) a `/grazie`. Questo garantisce
+  una navigazione completa, non client-side) a `/imagemaster/grazie`. Questo garantisce
   che il pixel si ricarichi correttamente sulla pagina di ringraziamento.
-- La pagina `/grazie` (`app/grazie/page.tsx`) traccia l'evento standard
+- La pagina `/imagemaster/grazie` (`app/imagemaster/grazie/page.tsx`) traccia l'evento standard
   `Lead` non appena il pixel è pronto.
 - Su Meta Ads, per misurare le conversioni puoi usare l'evento `Lead` del
   pixel oppure una regola di conversione personalizzata basata sull'URL
-  `/grazie`.
+  `/imagemaster/grazie`.

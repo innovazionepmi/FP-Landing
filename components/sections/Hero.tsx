@@ -6,7 +6,7 @@ export default function Hero() {
     <header>
       <div className={styles.heroImage}>
         <Image
-          src="/images/Image-Master-Header-2026.jpg"
+          src="/imagemaster/images/Image-Master-Header-2026.jpg"
           alt="The Image Master — Fotografia Professionale"
           fill
           priority

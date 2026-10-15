@@ -5,7 +5,15 @@ import styles from "./LeadForm.module.css";
 
 type Status = "idle" | "loading" | "error";
 
-export default function LeadForm({ formId }: { formId: string }) {
+export default function LeadForm({
+  formId,
+  thankYouPath,
+  origine,
+}: {
+  formId: string;
+  thankYouPath: string;
+  origine: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const nameId = useId();
@@ -35,6 +43,7 @@ export default function LeadForm({ formId }: { formId: string }) {
           cognome: data.get("cognome"),
           email: data.get("email"),
           telefono: data.get("telefono"),
+          origine,
         }),
       });
 
@@ -46,7 +55,7 @@ export default function LeadForm({ formId }: { formId: string }) {
       form.reset();
       // Full navigation (not client-side routing) so the Meta Pixel base
       // code re-fires on the thank-you page and the Lead event is tracked.
-      window.location.href = "/grazie";
+      window.location.href = thankYouPath;
     } catch (err) {
       setStatus("error");
       setErrorMessage(

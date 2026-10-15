@@ -47,7 +47,7 @@ export default function GraziePage() {
         </p>
         <div style={{ marginTop: 32 }}>
           <Link
-            href="/"
+            href="/imagemaster"
             style={{
               color: "var(--white)",
               textDecoration: "underline",

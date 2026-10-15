@@ -37,7 +37,7 @@ export default function Tools() {
         <h2 className={shared.heading}>Gli Strumenti che avrai a disposizione</h2>
         <div className={styles.banner}>
           <Image
-            src="/images/Strumenti.jpg"
+            src="/imagemaster/images/Strumenti.jpg"
             alt="Gli strumenti di The Image Master"
             fill
             sizes="100vw"

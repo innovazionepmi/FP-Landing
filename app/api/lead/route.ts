@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { appendLeadRow } from "@/lib/googleSheets";
 import { sendLeadNotification } from "@/lib/mailer";
+import { resolveOrigin } from "@/lib/origins";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -17,6 +18,7 @@ export async function POST(req: NextRequest) {
   const cognome = String(payload?.cognome ?? "").trim();
   const email = String(payload?.email ?? "").trim();
   const telefono = String(payload?.telefono ?? "").trim();
+  const origine = resolveOrigin(payload?.origine);
 
   if (!nome || !cognome || !email || !telefono) {
     return NextResponse.json(
@@ -32,8 +34,8 @@ export async function POST(req: NextRequest) {
   const timestamp = new Date().toISOString();
 
   const [sheetResult, mailResult] = await Promise.allSettled([
-    appendLeadRow([timestamp, nome, cognome, email, telefono, "landing-backup"]),
-    sendLeadNotification({ nome, cognome, email, telefono }),
+    appendLeadRow([timestamp, nome, cognome, email, telefono, origine.slug]),
+    sendLeadNotification({ nome, cognome, email, telefono }, origine.label),
   ]);
 
   if (sheetResult.status === "rejected") {

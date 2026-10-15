@@ -7,7 +7,7 @@ type Lead = {
   telefono: string;
 };
 
-export async function sendLeadNotification(lead: Lead) {
+export async function sendLeadNotification(lead: Lead, originLabel: string) {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || 587);
   const user = process.env.SMTP_USER;
@@ -32,17 +32,17 @@ export async function sendLeadNotification(lead: Lead) {
   });
 
   await transporter.sendMail({
-    from: `"Landing The Image Master" <${fromEmail}>`,
+    from: `"Landing ${originLabel}" <${fromEmail}>`,
     to,
     replyTo: lead.email,
-    subject: `Nuovo lead: ${lead.nome} ${lead.cognome}`,
-    text: `Nuovo lead dalla landing di backup "The Image Master"
+    subject: `Nuovo lead (${originLabel}): ${lead.nome} ${lead.cognome}`,
+    text: `Nuovo lead dalla landing "${originLabel}"
 
 Nome: ${lead.nome}
 Cognome: ${lead.cognome}
 Email: ${lead.email}
 Telefono: ${lead.telefono}`,
-    html: `<h2>Nuovo lead — The Image Master (landing di backup)</h2>
+    html: `<h2>Nuovo lead — ${originLabel}</h2>
 <p><strong>Nome:</strong> ${lead.nome}</p>
 <p><strong>Cognome:</strong> ${lead.cognome}</p>
 <p><strong>Email:</strong> ${lead.email}</p>

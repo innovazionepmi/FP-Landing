@@ -55,7 +55,7 @@ export default function Pricing() {
 
         <div className={styles.priceImage}>
           <Image
-            src="/images/Prezzo-Image-Master.jpg"
+            src="/imagemaster/images/Prezzo-Image-Master.jpg"
             alt="Prezzo The Image Master"
             fill
             sizes="480px"
@@ -78,7 +78,7 @@ export default function Pricing() {
             <div key={b.title} className={styles.bonusCard}>
               <div className={styles.bonusIcon}>
                 <Image
-                  src="/images/Pacco-regalo.jpg"
+                  src="/imagemaster/images/Pacco-regalo.jpg"
                   alt=""
                   fill
                   sizes="64px"

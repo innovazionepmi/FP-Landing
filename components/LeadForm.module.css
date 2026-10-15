@@ -33,7 +33,7 @@
 .input:focus {
   outline: none;
   border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(245, 130, 15, 0.15);
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(245, 130, 15, 0.15));
 }
 
 .honeypot {

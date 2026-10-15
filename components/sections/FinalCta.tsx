@@ -22,7 +22,7 @@ export default function FinalCta() {
         </p>
 
         <div style={{ marginTop: 32 }}>
-          <LeadForm formId="form-footer" />
+          <LeadForm formId="form-footer" thankYouPath="/imagemaster/grazie" origine="imagemaster" />
         </div>
 
         <div style={{ marginTop: 48, color: "var(--white)" }}>

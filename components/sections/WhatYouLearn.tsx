@@ -28,7 +28,7 @@ export default function WhatYouLearn() {
         </h2>
         <div className={styles.banner}>
           <Image
-            src="/images/Cosa-Imparareai.jpg"
+            src="/imagemaster/images/Cosa-Imparareai.jpg"
             alt="Cosa imparerai in The Image Master"
             fill
             sizes="100vw"

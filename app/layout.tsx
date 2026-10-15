@@ -10,9 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Image Master — Fotografia Professionale",
-  description:
-    "Il percorso per integrare Fotografia, Generazione AI e Ritocco Professionale in un unico workflow. Richiedi informazioni su The Image Master.",
+  title: "Fotografia Professionale",
   robots: {
     index: false,
     follow: false,
