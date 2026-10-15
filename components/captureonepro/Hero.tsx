@@ -5,23 +5,19 @@ import s from "./cop.module.css";
 export default function Hero() {
   return (
     <header className={s.hero}>
-      {/* Mobile: banner a tutta larghezza, poi titolo e form subito sotto. */}
-      <Image
-        className={s.heroBanner}
-        src="/captureonepro/images/Capture-One-Header-Slim-2.jpg"
-        alt="Capture One Professional Workflow — Percorso completo su Capture One Pro"
-        width={2560}
-        height={1007}
-        sizes="100vw"
-        priority
-        style={{ width: "100%", height: "auto" }}
-      />
-
+      {/*
+        Desktop: titolo a tutta larghezza; sotto, immagine + dati a sinistra e
+        form a destra, allineati.
+        Mobile (ordine via CSS): immagine, titolo, dati del percorso, pulsante
+        che porta al form, poi il form. Il form non deve occupare la prima
+        schermata: sopra la piega si deve capire che è un percorso formativo.
+      */}
       <div className={s.heroGrid}>
         <h1 className={s.heroTitle}>
           Costruisci un workflow più efficiente e professionale con Capture
           One Pro per lavorare meglio, più velocemente e con più controllo.
         </h1>
+
         <div className={s.heroLeft}>
           <div className={s.heroArt}>
             <Image
@@ -29,8 +25,9 @@ export default function Hero() {
               alt="Capture One Professional Workflow — Scatto in tethering, scelta e organizzazione, editing, archiviazione, consegna"
               width={2500}
               height={1438}
-              sizes="(min-width: 1180px) 600px, 52vw"
-              style={{ width: "100%", height: "auto", borderRadius: 14 }}
+              sizes="(min-width: 1180px) 600px, (min-width: 900px) 52vw, 100vw"
+              priority
+              style={{ width: "100%", height: "auto" }}
             />
           </div>
           <div className={s.heroFacts}>
@@ -52,7 +49,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Titolo a tutta larghezza sopra; sotto, immagine e form allineati. */}
+        {/* Solo mobile: porta al form qui sotto. */}
+        <a href="#form-hero" className={`${s.ctaBtn} ${s.heroCta}`}>
+          Richiedi Informazioni
+        </a>
+
         <div className={s.heroForm} data-lead-form id="form-hero">
           <LeadForm
             formId="lead-form-hero"

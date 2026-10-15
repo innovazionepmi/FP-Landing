@@ -100,31 +100,19 @@
   color: #fff;
 }
 
-.heroBanner {
-  display: block;
-}
-
 .heroGrid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 28px 40px;
-  align-items: start;
+  align-items: stretch;
   padding: 40px 20px 52px;
   max-width: 1180px;
   margin: 0 auto;
 }
 
-.heroArt {
-  display: none;
-}
-
-/* Sul mobile il wrapper sparisce: restano form e poi i fatti. */
-.heroLeft {
-  display: contents;
-}
-
 .heroTitle {
   grid-column: 1 / -1;
+  align-self: start;
   max-width: 1000px;
   margin: 0 auto 6px;
   text-align: center;
@@ -133,10 +121,13 @@
   line-height: 1.25;
 }
 
-.facts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.heroArt img {
+  border-radius: 14px;
+}
+
+/* .hero davanti: deve battere .ctaBtn (definita più sotto) */
+.hero .heroCta {
+  display: none;
 }
 
 .kicker {
@@ -149,7 +140,17 @@
   margin: 0 0 12px;
 }
 
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
 .fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background: rgba(255, 255, 255, 0.09);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -166,22 +167,7 @@
 }
 
 @media (min-width: 900px) {
-  .heroBanner {
-    display: none;
-  }
-  .heroArt {
-    display: block;
-  }
-}
-
-@media (min-width: 900px) {
   /* colonna sinistra alta quanto il form: le tessere dei dati si allungano */
-  .heroGrid {
-    align-items: stretch;
-  }
-  .heroTitle {
-    align-self: start;
-  }
   .heroLeft {
     display: flex;
     flex-direction: column;
@@ -195,37 +181,61 @@
   .heroFacts .facts {
     flex: 1;
     grid-auto-rows: 1fr;
-    margin-top: 0;
-  }
-  .fact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
 @media (max-width: 899px) {
   .heroGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0 36px;
   }
+  /* il wrapper sparisce: immagine e dati diventano elementi del flusso */
+  .heroLeft {
+    display: contents;
+  }
+  /* 1. immagine a tutta larghezza, senza bordi */
+  .heroArt {
+    order: 1;
+  }
+  .heroArt img {
+    border-radius: 0;
+  }
+  /* 2. titolo */
   .heroTitle {
-    font-size: 1.3rem;
-    margin-bottom: 0;
+    order: 2;
+    padding: 20px 20px 0;
+    margin: 0;
     text-align: left;
+    font-size: 1.3rem;
   }
-  /* form più compatto nell'hero: campi e pulsante devono stare sopra la piega */
-  .heroForm form {
-    padding: 20px 18px;
-  }
-  .heroForm form > div {
-    margin-bottom: 10px;
-  }
-  /* sul mobile i fatti vanno sotto al form, non prima */
+  /* 3. percorso formativo + 4 dati */
   .heroFacts {
     order: 3;
+    padding: 20px 20px 0;
+  }
+  .fact {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+  }
+  .fact strong {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+  /* 4. pulsante verso il form */
+  .hero .heroCta {
+    order: 4;
+    display: block;
+    margin: 20px 20px 0;
+    text-align: center;
+    padding: 16px 20px;
+  }
+  /* 5. form */
+  .heroForm {
+    order: 5;
+    padding: 36px 20px 0;
+    scroll-margin-top: 8px;
   }
 }
 
