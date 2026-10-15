@@ -36,7 +36,7 @@ export default function Story() {
               benissimo come stanno le cose oggi, rispetto a qualche anno fa:
             </p>
           </div>
-          <div className={s.painGrid}>
+          <div className={`${s.painGrid} ${s.narrow}`}>
             <div className={s.pain}>Devi consegnare molte più immagini</div>
             <div className={s.pain}>In meno tempo</div>
             <div className={s.pain}>Con budget più rigidi (e più bassi)</div>
@@ -114,7 +114,7 @@ export default function Story() {
               giusto.
             </p>
           </div>
-          <div className={s.stepGrid}>
+          <div className={`${s.stepGrid} ${s.narrow}`}>
             {[
               "Sviluppare un workflow professionale super efficace.",
               "Organizzare ogni produzione grazie ad un processo efficiente e collaudato.",
