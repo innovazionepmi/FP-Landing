@@ -34,6 +34,7 @@ export default function Hero() {
             />
           </div>
           <div className={s.heroFacts}>
+            <p className={s.kicker}>Percorso formativo</p>
             <div className={s.facts}>
               <div className={s.fact}>
                 <strong>5 sessioni live</strong>in Streaming di 2 ore

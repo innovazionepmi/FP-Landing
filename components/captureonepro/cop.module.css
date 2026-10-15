@@ -137,10 +137,20 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-top: 18px;
+}
+
+.kicker {
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
 }
 
 .fact {
+  text-align: center;
   background: rgba(255, 255, 255, 0.09);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 10px;
@@ -180,6 +190,7 @@
   .heroFacts {
     flex: 1;
     display: flex;
+    flex-direction: column;
   }
   .heroFacts .facts {
     flex: 1;
@@ -190,6 +201,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 }
 
