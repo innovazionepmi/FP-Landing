@@ -107,8 +107,8 @@
 .heroGrid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 28px 40px;
+  align-items: start;
   padding: 40px 20px 52px;
   max-width: 1180px;
   margin: 0 auto;
@@ -124,10 +124,13 @@
 }
 
 .heroTitle {
-  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  grid-column: 1 / -1;
+  max-width: 1000px;
+  margin: 0 auto 6px;
+  text-align: center;
+  font-size: clamp(1.45rem, 2.8vw, 2.3rem);
   font-weight: 800;
   line-height: 1.25;
-  margin-bottom: 22px;
 }
 
 .facts {
@@ -162,8 +165,31 @@
 }
 
 @media (min-width: 900px) {
+  /* colonna sinistra alta quanto il form: le tessere dei dati si allungano */
+  .heroGrid {
+    align-items: stretch;
+  }
+  .heroTitle {
+    align-self: start;
+  }
   .heroLeft {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .heroFacts {
+    flex: 1;
+    display: flex;
+  }
+  .heroFacts .facts {
+    flex: 1;
+    grid-auto-rows: 1fr;
+    margin-top: 0;
+  }
+  .fact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -175,7 +201,8 @@
   }
   .heroTitle {
     font-size: 1.3rem;
-    margin-bottom: 14px;
+    margin-bottom: 0;
+    text-align: left;
   }
   /* form più compatto nell'hero: campi e pulsante devono stare sopra la piega */
   .heroForm form {

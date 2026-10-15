@@ -18,6 +18,10 @@ export default function Hero() {
       />
 
       <div className={s.heroGrid}>
+        <h1 className={s.heroTitle}>
+          Costruisci un workflow più efficiente e professionale con Capture
+          One Pro per lavorare meglio, più velocemente e con più controllo.
+        </h1>
         <div className={s.heroLeft}>
           <div className={s.heroArt}>
             <Image
@@ -47,12 +51,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Il form sta sopra la piega: titolo + modulo, subito. */}
+        {/* Titolo a tutta larghezza sopra; sotto, immagine e form allineati. */}
         <div className={s.heroForm} data-lead-form id="form-hero">
-          <h1 className={s.heroTitle}>
-            Costruisci un workflow più efficiente e professionale con Capture
-            One Pro per lavorare meglio, più velocemente e con più controllo.
-          </h1>
           <LeadForm
             formId="lead-form-hero"
             thankYouPath="/captureonepro/grazie"
