@@ -65,7 +65,7 @@ export default function Pricing() {
               ))}
             </ul>
             <p className={s.priceOld}>a soli 1.200,00 euro + IVA</p>
-            <p className={s.priceNew}>a soli 297,00 euro + IVA</p>
+            <p className={s.priceNew}>a soli 347,00 euro + IVA</p>
           </div>
 
           <div className={`${s.narrow} ${s.prose}`}>
@@ -86,7 +86,7 @@ export default function Pricing() {
             </p>
           </div>
           <div className={s.alert} style={{ marginTop: 28 }}>
-            ATTENZIONE: la promo di lancio termina il 15 Ottobre
+            ATTENZIONE: la promo di lancio termina il 5 Novembre
           </div>
         </div>
       </section>

@@ -41,9 +41,9 @@ export default function Hero() {
               </div>
               <div className={s.fact}>
                 <span className={s.promo}>
-                  Promo fino al <span className={s.nowrap}>15 Ottobre</span>
+                  Promo fino al <span className={s.nowrap}>5 Novembre</span>
                 </span>
-                <strong>297,00 € + IVA</strong>invece di 1.200,00 €
+                <strong>347,00 € + IVA</strong>invece di 1.200,00 €
               </div>
               <div className={s.fact}>
                 <strong>5 bonus inclusi</strong>solo in fase di lancio
